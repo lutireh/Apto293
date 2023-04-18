@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      centerTitle: true,
+      title: const Text(
+        'Navigation Drawer',
+      ),
+      backgroundColor: const Color(0xff764abc),
+    ),
+    drawer: Drawer(
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  children: [
+                    const DrawerHeader(
+                      decoration: BoxDecoration(color: Color(0xff764abc)),
+                      //Image.assets()
+                      child: Text('Menu'),
+                    ),
+                    ListTile(
+                      // leading: Icon(),
+                      title: const Text('Móveis'),
+                      onTap: () {},
+                    ),
+                    ListTile(
+                      //leading: Icon(),
+                      title: const Text('Gastos Fixos'),
+                      onTap: () {},
+                    ),
+                    ListTile(
+                      //leading: Icon(),
+                      title: const Text('Gastos Variáveis'),
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+              ),
+    ),
+    body: Center(
+      child: Column(
+        children: [
+          SizedBox(
+            height: 50,
+          ),
+        ],
+      ),
+    ),
+  );
+}
