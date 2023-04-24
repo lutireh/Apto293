@@ -1,4 +1,4 @@
-#Thu Apr 20 20:15:49 BRT 2023
-base.0=C\:\\Users\\Luiza Rehbein\\Documents\\Facul\\1s2023\\Mobile\\Apto293\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Mon Apr 24 02:10:45 BRT 2023
+base.0=C\:\\Users\\rhuan\\OneDrive\\Documentos\\GitHub\\Att_2_Flutter\\att_2_flutter\\Apto293\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

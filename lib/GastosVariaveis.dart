@@ -1,3 +1,4 @@
+import 'package:att_2_flutter/drawer.dart';
 import 'package:flutter/material.dart';
 import 'GastosFixos.dart';
 import 'MyApp.dart';
@@ -16,40 +17,7 @@ class GastosVariaveis extends StatelessWidget {
         ),
         backgroundColor: const Color(0xff764abc),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(color: Color(0xff764abc)),
-              //Image.assets()
-              child: Text('Menu'),
-            ),
-            ListTile(
-              // leading: Icon(),
-              title: const Text('Home'),
-              onTap: () => Navigator.of(context).push(_page(const MyApp())),
-            ),
-            ListTile(
-              // leading: Icon(),
-              title: const Text('Móveis'),
-              onTap: () => Navigator.of(context).push(_page(const Moveis())),
-            ),
-            ListTile(
-              //leading: Icon(),
-              title: const Text('Gastos Fixos'),
-              onTap: () =>
-                  Navigator.of(context).push(_page(const GastosFixos())),
-            ),
-            ListTile(
-              //leading: Icon(),
-              title: const Text('Gastos Variáveis'),
-              onTap: () =>
-                  Navigator.of(context).push(_page(const GastosVariaveis())),
-            ),
-          ],
-        ),
-      ),
+      drawer: AppDrawer(),
       body: Center(
         child: Column(
           children: [
