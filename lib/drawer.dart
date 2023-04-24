@@ -71,6 +71,7 @@ class NavItem extends StatelessWidget {
   final VoidCallback? onTap;
 
   const NavItem({
+    super.key,
     required this.text,
     this.icon,
     this.screen,
@@ -82,18 +83,17 @@ class NavItem extends StatelessWidget {
     return ListTile(
       leading: Icon(icon),
       title: Text(text),
-      onTap: onTap != null
-          ? onTap
-          : () {
-              Navigator.of(context).pop();
-              Navigator.of(context).push(_page(screen!));
-            },
+      onTap: onTap ??
+          () {
+            Navigator.of(context).pop();
+            Navigator.of(context).push(_Page(screen!));
+          },
     );
   }
 }
 
-class _page extends MaterialPageRoute<void> {
-  _page(Widget screen)
+class _Page extends MaterialPageRoute<void> {
+  _Page(Widget screen)
       : super(builder: (BuildContext context) {
           return screen;
         });

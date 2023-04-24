@@ -14,7 +14,7 @@ class GastosFixos extends StatelessWidget {
         ),
         backgroundColor: const Color(0xff764abc),
       ),
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -48,12 +48,12 @@ class GastosFixos extends StatelessWidget {
               color: Colors.purple[100],
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Padding(
+                children: const [
+                  Padding(
                     padding: EdgeInsets.only(left: 10),
                     child: Text('Luz'),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: Text('R\$ 0,00'),
                   ),
@@ -65,12 +65,12 @@ class GastosFixos extends StatelessWidget {
               color: Colors.purple[300],
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Padding(
+                children: const [
+                  Padding(
                     padding: EdgeInsets.only(left: 10),
                     child: Text('Aluguel'),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: Text('R\$ 1000,00'),
                   ),
@@ -82,12 +82,12 @@ class GastosFixos extends StatelessWidget {
               color: Colors.purple[100],
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Padding(
+                children: const [
+                  Padding(
                     padding: EdgeInsets.only(left: 10),
                     child: Text('Internet'),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(right: 10),
                     child: Text('R\$ 500,00'),
                   ),
@@ -126,10 +126,10 @@ class GastosFixos extends StatelessWidget {
 
 void _adicionarLuz(BuildContext context) {
   double valorLuz = 0;
-  final snackBar = SnackBar(
-    content: const Text('Conta de luz adicionada com sucesso!'),
+  const snackBar = SnackBar(
+    content: Text('Conta de luz adicionada com sucesso!'),
     backgroundColor: Colors.green,
-    duration: const Duration(seconds: 2),
+    duration: Duration(seconds: 2),
   );
   showDialog(
     context: context,

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:att_2_flutter/drawer.dart';
-import 'GastosFixos.dart';
-import 'MyApp.dart';
-import 'GastosVariaveis.dart';
 
 class Moveis extends StatelessWidget {
   const Moveis({Key? key}) : super(key: key);
@@ -17,7 +14,7 @@ class Moveis extends StatelessWidget {
         ),
         backgroundColor: const Color(0xff764abc),
       ),
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -60,7 +57,7 @@ class Moveis extends StatelessWidget {
         ),
       ),
       floatingActionButton: PopupMenuButton<String>(
-        icon: Icon(Icons.add),
+        icon: const Icon(Icons.add),
         itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
           const PopupMenuItem<String>(
             value: 'adicionar',
@@ -86,7 +83,7 @@ class Moveis extends StatelessWidget {
         ],
         onSelected: (String value) {
           if (value == 'adicionar') {
-            _adicionarMovel(context);
+            _adicionarMovel(context, ScaffoldMessenger.of(context));
           } else if (value == 'pesquisar') {
             // Código para pesquisar um móvel
           } else if (value == 'excluir') {
@@ -103,17 +100,15 @@ class Moveis extends StatelessWidget {
   }
 }
 
-void _adicionarMovel(BuildContext context) {
-  String nomeMovel = "";
+void _adicionarMovel(
+    BuildContext context, ScaffoldMessengerState scaffoldMessenger) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
         title: const Text("Adicionar Móvel"),
         content: TextFormField(
-          onChanged: (value) {
-            nomeMovel = value;
-          },
+          onChanged: (value) {},
           decoration: const InputDecoration(hintText: "Nome do móvel"),
         ),
         actions: <Widget>[
@@ -125,7 +120,7 @@ void _adicionarMovel(BuildContext context) {
           ),
           TextButton(
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              scaffoldMessenger.showSnackBar(const SnackBar(
                 content: Text('Item adicionado com sucesso!'),
                 backgroundColor: Colors.green,
                 duration: Duration(seconds: 2),

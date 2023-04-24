@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'GastosFixos.dart';
 import 'MyApp.dart';
-import 'GastosVariaveis.dart';
 
 class Usuario extends StatelessWidget {
   const Usuario({Key? key}) : super(key: key);
@@ -11,15 +9,15 @@ class Usuario extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Image.asset('assets/logo293.png', width: 200, height: 200),
-              SizedBox(height: 40),
-              Text(
+              const SizedBox(height: 40),
+              const Text(
                 'Login',
                 style: TextStyle(
                   fontSize: 24,
@@ -27,7 +25,7 @@ class Usuario extends StatelessWidget {
                   color: Colors.purple,
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: TextField(
@@ -42,7 +40,7 @@ class Usuario extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: TextField(
@@ -58,19 +56,20 @@ class Usuario extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(_page(const MyApp()));
+                  Navigator.of(context).push(_Page(const MyApp()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 60, vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 60, vertical: 12),
                 ),
-                child: Text(
+                child: const Text(
                   'Entrar',
                   style: TextStyle(
                     fontSize: 18,
@@ -87,8 +86,8 @@ class Usuario extends StatelessWidget {
   }
 }
 
-class _page extends MaterialPageRoute<void> {
-  _page(Widget screen)
+class _Page extends MaterialPageRoute<void> {
+  _Page(Widget screen)
       : super(builder: (BuildContext context) {
           return screen;
         });

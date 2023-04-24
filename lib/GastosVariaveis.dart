@@ -9,20 +9,8 @@ class GastosVariaveis extends StatefulWidget {
 }
 
 class _GastosVariaveisState extends State<GastosVariaveis> {
-  double _totalGastosVariaveis = 0;
-  double _valorPagar = 0;
-
-  void _setTotalGastosVariaveis(double value) {
-    setState(() {
-      _totalGastosVariaveis = value;
-    });
-  }
-
-  void _setValorPagar(double value) {
-    setState(() {
-      _valorPagar = value;
-    });
-  }
+  final double _totalGastosVariaveis = 0;
+  final double _valorPagar = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +20,7 @@ class _GastosVariaveisState extends State<GastosVariaveis> {
         title: const Text('Gastos Variáveis'),
         backgroundColor: const Color(0xff764abc),
       ),
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -87,13 +75,13 @@ class _GastosVariaveisState extends State<GastosVariaveis> {
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
                       labelText: 'Nome do item',
                     ),
                   ),
                   const SizedBox(height: 16),
-                  TextField(
+                  const TextField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       labelText: 'Valor do item',
@@ -139,7 +127,7 @@ class _GastosVariaveisState extends State<GastosVariaveis> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
-        padding: EdgeInsets.symmetric(horizontal: 60, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 12),
       ),
       child: null,
     );

@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'Drawer.dart';
-import 'Usuario.dart';
-import 'Moveis.dart';
-import 'GastosFixos.dart';
-import 'GastosVariaveis.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp();
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +22,7 @@ class MyApp extends StatelessWidget {
             ),
             backgroundColor: const Color(0xff764abc),
           ),
-          drawer: AppDrawer(),
+          drawer: const AppDrawer(),
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
