@@ -126,48 +126,54 @@ class GastosFixos extends StatelessWidget {
 
 void _adicionarLuz(BuildContext context) {
   double valorLuz = 0;
+  final snackBar = SnackBar(
+    content: const Text('Conta de luz adicionada com sucesso!'),
+    backgroundColor: Colors.green,
+    duration: const Duration(seconds: 2),
+  );
   showDialog(
     context: context,
     builder: (BuildContext context) {
-      return AlertDialog(
-        title: const Text("Adicionar conta de luz"),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Text('Escolha o valor da conta de luz'),
-            const SizedBox(height: 20),
-            Slider(
-              value: valorLuz,
-              onChanged: (double value) {
-                valorLuz = value;
+      return StatefulBuilder(builder: (context, setState) {
+        return AlertDialog(
+          title: const Text("Adicionar conta de luz"),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text('Escolha o valor da conta de luz'),
+              const SizedBox(height: 20),
+              Slider(
+                value: valorLuz,
+                onChanged: (double value) {
+                  setState(() {
+                    valorLuz = value;
+                  });
+                },
+                min: 0,
+                max: 1000,
+                divisions: 100,
+                label: 'R\$ $valorLuz',
+              ),
+            ],
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
               },
-              min: 0,
-              max: 1000,
-              divisions: 100,
-              label: 'R\$ $valorLuz',
+              child: const Text("Cancelar"),
+            ),
+            TextButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                Navigator.pop(context);
+              },
+              child: const Text("Adicionar"),
             ),
           ],
-        ),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text("Cancelar"),
-          ),
-          TextButton(
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: const Text('Conta de luz adicionada com sucesso!'),
-                backgroundColor: Colors.green,
-                duration: const Duration(seconds: 2),
-              ));
-              Navigator.pop(context);
-            },
-            child: const Text("Adicionar"),
-          ),
-        ],
-      );
+        );
+      });
     },
   );
 }

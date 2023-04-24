@@ -14,7 +14,7 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           const UserAccountsDrawerHeader(
-            accountName: Text("LUiza ou Rhuan"),
+            accountName: Text("Luiza ou Rhuan"),
             accountEmail: Text("email@gmail.com"),
             currentAccountPicture: CircleAvatar(
               backgroundImage: AssetImage("assets/user_photo.jpg"),
